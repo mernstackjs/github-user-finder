@@ -3,3 +3,24 @@
   padding: 0;
   box-sizing: border-box;
 }
+
+header {
+  background-color: #222;
+  color: white;
+  padding: 10px 0;
+  text-align: center;
+}
+
+main {
+  padding: 20px;
+  font-family: Arial, sans-serif;
+  background-color: #f4f4f4;
+  min-height: 100vh;
+}
+
+footer {
+  text-align: center;
+  padding: 10px;
+  background-color: #222;
+  color: white;
+}
