@@ -4,35 +4,21 @@
   box-sizing: border-box;
 }
 
-header {
-  background-color: #222;
-  color: white;
-  padding: 10px 0;
-  text-align: center;
+:root {
+  --background: 220 20% 7%;
+  --foreground: 210 40% 98%;
+  --card: 220 18% 10%;
+  --card-foreground: 210 40% 98%;
+  --primary: 175 80% 50%;
+  --border: 220 15% 20%;
+  --radius: 0.75rem;
 }
 
-main {
-  padding: 20px;
-  font-family: Arial, sans-serif;
-  background-color: #f4f4f4;
-  min-height: 100vh;
-}
-
-footer {
-  text-align: center;
-  padding: 10px;
-  background-color: #222;
-  color: white;
-}
-
-#change-bg-color {
-  background-color: blue;
-  font-size: 2rem;
-  color: white;
-  border: none;
-  padding: 10px 15px;
-  cursor: pointer;
-  border-radius: 5px;
-  margin: 30px 0;
-  transition: background-color 0.3s ease;
+html,
+body {
+  background-color: hsl(var(--background));
+  color: hsl(var(--foreground));
+  margin: 0;
+  min-height: 100%;
+  font-family: Inter, sans-serif;
 }
