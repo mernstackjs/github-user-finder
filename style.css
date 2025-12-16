@@ -12,13 +12,192 @@
   --primary: 175 80% 50%;
   --border: 220 15% 20%;
   --radius: 0.75rem;
+  --shadow: 0 20px 60px hsl(0 0% 0% / 0.5);
+  --muted: 215 20% 55%;
 }
 
 html,
 body {
-  background-color: hsl(var(--background));
+  background: radial-gradient(
+    circle at top,
+    hsl(220 20% 12%),
+    hsl(var(--background))
+  );
   color: hsl(var(--foreground));
-  margin: 0;
+  display: flex;
+  justify-content: center;
   min-height: 100%;
-  font-family: Inter, sans-serif;
+  font-family: Inter, system-ui, sans-serif;
+}
+
+/* ---------- LAYOUT ---------- */
+.container {
+  width: 100%;
+  max-width: 900px;
+  padding: 4rem 1.5rem;
+  text-align: center;
+}
+
+/* ---------- HEADER ---------- */
+
+.logo {
+  width: 64px;
+  height: 64px;
+  margin: 0 auto 1.5rem;
+  border-radius: 16px;
+  background: hsl(var(--card));
+  display: grid;
+  place-items: center;
+  box-shadow: var(--shadow);
+}
+
+.logo svg {
+  width: 32px;
+  height: 32px;
+  color: hsl(var(--primary));
+}
+
+h1 {
+  font-size: 3rem;
+  font-weight: 700;
+  margin-bottom: 0.75rem;
+}
+
+h1 span {
+  color: hsl(var(--primary));
+}
+
+.subtitle {
+  color: hsl(var(--muted));
+  max-width: 520px;
+  margin: 0 auto 3rem;
+  line-height: 1.6;
+}
+
+/* ---------- SEARCH ---------- */
+.search-box {
+  display: flex;
+  gap: 0.75rem;
+  background: hsl(var(--card));
+  border: 1px solid hsl(var(--border));
+  border-radius: var(--radius);
+  padding: 0.75rem;
+  box-shadow: var(--shadow);
+}
+
+.search-box input {
+  flex: 1;
+  background: transparent;
+  border: none;
+  color: hsl(var(--foreground));
+  font-size: 1rem;
+  outline: none;
+}
+
+.search-box button {
+  background: hsl(var(--primary));
+  color: hsl(var(--background));
+  border: none;
+  padding: 0.75rem 1.5rem;
+  border-radius: calc(var(--radius) - 0.25rem);
+  font-weight: 600;
+  cursor: pointer;
+}
+.search-box button:hover {
+  background: hsl(var(--primary) / 0.9);
+}
+
+/* ---------- CARD ---------- */
+.card {
+  margin-top: 3rem;
+  background: linear-gradient(145deg, hsl(220 18% 12%), hsl(220 18% 8%));
+  border: 1px solid hsl(var(--border));
+  border-radius: var(--radius);
+  padding: 2rem;
+  box-shadow: var(--shadow);
+  display: none;
+  text-align: left;
+}
+
+.profile {
+  display: flex;
+  gap: 1.5rem;
+  align-items: center;
+}
+
+.avatar {
+  width: 96px;
+  height: 96px;
+  border-radius: 50%;
+  border: 3px solid hsl(var(--primary));
+}
+
+.name {
+  font-size: 1.5rem;
+  font-weight: 600;
+}
+
+.username {
+  color: hsl(var(--primary));
+  margin-top: 0.25rem;
+}
+
+.bio {
+  margin: 1.25rem 0;
+  color: hsl(var(--muted));
+  line-height: 1.6;
+}
+
+.stats {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  background: hsl(220 18% 8%);
+  border-radius: var(--radius);
+  padding: 1rem;
+  text-align: center;
+  margin-bottom: 1.5rem;
+}
+
+.stats div span {
+  display: block;
+  font-size: 1.25rem;
+  font-weight: 600;
+  margin-top: 0.25rem;
+}
+
+.links {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 1rem;
+  flex-wrap: wrap;
+}
+
+.links a {
+  flex: 1;
+  text-align: center;
+  padding: 0.75rem;
+  border-radius: var(--radius);
+  background: hsl(var(--primary) / 0.15);
+  color: hsl(var(--primary));
+  text-decoration: none;
+  font-weight: 600;
+}
+
+.links a:hover {
+  background: hsl(var(--primary) / 0.25);
+}
+footer {
+  margin-top: 4rem;
+  color: hsl(var(--muted));
+  font-size: 0.875rem;
+}
+
+footer a {
+  color: hsl(var(--primary));
+  text-decoration: none;
+  font-weight: 600;
+}
+footer a:hover {
+  text-decoration: underline;
 }
